@@ -1,0 +1,37 @@
+@hostname = localhost
+@port = 5001
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+###
+# GET /users
+GET http://{{host}}/subscribers
+
+###
+# GET /user
+GET http://{{host}}/subscribers/62bd919d97007c1221ef0823
+
+###
+# POST /user
+POST http://localhost:5001/subscribers
+Content-Type: {{contentType}}
+
+{
+  "name" : "Veysel pro",
+  "channels" : "javascriptors"
+}
+
+
+###
+# DELETE /user
+DELETE http://{{host}}/subscribers/62bd92d997007c1221ef0829
+
+
+###
+# UPDATE /user
+PATCH http://{{host}}/subscribers/62bd9901d62281ba1e691fcb
+Content-Type: {{contentType}}
+
+{
+  "name" : "Veysel VTK"
+}
