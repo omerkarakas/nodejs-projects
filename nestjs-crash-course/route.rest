@@ -1,0 +1,28 @@
+@hostname = localhost
+@port = 5001
+@base = api
+@host = {{hostname}}:{{port}}/{{base}}
+@contentType = application/json
+
+###
+# GET /users
+GET http://{{host}}/customers
+
+###
+# GET /user
+GET http://{{host}}/customers/search/
+
+###
+# POST /user
+POST http://{{host}}/customers/create
+Content-Type: {{contentType}}
+
+{
+  "name" : "Ali Pro",
+  "email" : "ali@abc.com"
+}
+
+
+###
+# DELETE /user
+DELETE http://{{host}}/customers/62bd92d997007c1221ef0829
