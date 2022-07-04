@@ -1,4 +1,3 @@
-const { MongoTopologyClosedError } = require('mongodb');
 const mongoose = require('mongoose');
 
 const subscriberSchema = new mongoose.Schema({
