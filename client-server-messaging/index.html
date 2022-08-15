@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client-Server Communication over WebSockets</title>
+  </head>
+  <h3>Have a look at the console log</h3>
+  <script>
+    const ws = new WebSocket('ws://localhost:5000');
+
+    ws.addEventListener('open', () => {
+      console.log('we are connected now');
+
+      ws.send('Hey server, I am following you...');
+      console.log('I told the server : Hey server, I am following you...');
+      //can be seen in the network tab, messages section
+    });
+
+    ws.addEventListener('message', (e) => {
+      console.log(e.data);
+    });
+  </script>
+  <body></body>
+</html>
